@@ -6,7 +6,16 @@ FROM balenalib/raspberrypi3-debian-node:12-stretch-build as build
 RUN JOBS=MAX npm install -g --production --unsafe-perm \
        node-red \
        node-red-admin \
-       node-red-contrib-balena
+       node-red-contrib-balena \
+       node-red-contrib-boolean-logic-ultimate \
+       node-red-contrib-cpu \
+      #  node-red-contrib-git-nodes \
+      #  node-red-contrib-git-ui \
+       node-red-contrib-web-worldmap \
+       node-red-node-pi-gpio \
+       node-red-dashboard \
+       node-red-node-ping \
+       node-red-node-rbe
 
 ###
 # Runtime image
@@ -14,9 +23,9 @@ RUN JOBS=MAX npm install -g --production --unsafe-perm \
 FROM balenalib/raspberrypi3-debian-node:12-stretch-run
 
 RUN apt-get update && apt-get install -yq --no-install-recommends \
-  rpi.gpio \
+  # rpi.gpio \
   python-dev \
-  python-rpi.gpio \
+  # python-rpi.gpio \
   libatomic1 \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -29,6 +38,8 @@ COPY --from=build /usr/local/lib/node_modules /usr/local/lib/node_modules
 
 # This will copy all files in our root to the working  directory in the container
 COPY ./app ./
+
+# COPY ./files/geojsons /data/node-red/user/files/geojsons
 
 # server.js will run when container starts up on the device
 CMD ["bash", "/usr/src/app/start.sh"]

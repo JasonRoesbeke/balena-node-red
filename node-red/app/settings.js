@@ -48,11 +48,11 @@ module.exports = {
     debugMaxLength: 1000,
 
     // The file containing the flows. If not set, it defaults to flows_<hostname>.json
-    //flowFile: 'flows.json',
+    flowFile: 'flows.json',
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
-    //flowFilePretty: true,
+    flowFilePretty: true,
 
     // By default, credentials are encrypted in storage using a generated key. To
     // specify your own secret, set the following property.
@@ -189,16 +189,20 @@ module.exports = {
     //paletteCategories: ['subflows', 'input', 'output', 'function', 'social', 'mobile', 'storage', 'analysis', 'advanced'],
     editorTheme: {
         page: {
-            title: "balena Node-RED",
+            title: "nodeR",
             favicon: "/usr/src/app/assets/favicon.ico"
         },
         header: {
-            title: "balena Node-RED",
+            title: "nodeR",
             image: "/usr/src/app/assets/logo.png", // or null to remove image
             url: "https://balena.io"
         },
         login: {
             image: "/usr/src/app/assets/logo.png" // a 256x256 image
+        },
+        projects: {
+            // To enable the Projects feature, set this value to true
+            enabled: false
         }
     },
     // Configure the logging output
