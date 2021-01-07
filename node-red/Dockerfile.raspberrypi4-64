@@ -42,7 +42,7 @@ COPY ./app ./
 
 WORKDIR /usr/local/lib
 
-RUN npm install /usr/src/app/nodes/node-red-contrib-azure-iot-device
+RUN npm install /usr/src/app/custom_nodes/node-red-contrib-azure-iot-device
 
 WORKDIR /usr/src/app
 
