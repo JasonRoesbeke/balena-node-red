@@ -1,0 +1,41 @@
+{
+  "name": "node-red-contrib-turfjs",
+  "version": "0.0.1",
+  "description": "node-red wrapper around turfjs",
+  "main": "turfjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+githublink"
+  },
+  "node-red": {
+    "nodes": {
+      "turfjs": "turfjs.js"
+    }
+  },
+  "keywords": [
+    "node-red",
+    "node-red-contrib",
+    "contrib",
+    "turf",
+    "turfjs",
+    "turfjs-new"
+  ],
+  "author": "Zine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/umasudhan/node-red-contrib-turfjs/issues"
+  },
+  "homepage": "",
+  "dependencies": {
+    "@turf/turf": "^5.1.6"
+  },
+  "maintainers": [
+    ""
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

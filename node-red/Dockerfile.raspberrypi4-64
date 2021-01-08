@@ -13,10 +13,11 @@ RUN JOBS=MAX npm install -g --production --unsafe-perm \
       #  node-red-contrib-git-ui \
        node-red-contrib-web-worldmap \
        node-red-node-pi-gpio \
-       node-red-dashboard
+       node-red-dashboard \
       #  node-red-node-ping \
       #  node-red-node-rbe \
-      #  node-red-contrib-azure-iot-device
+      #  node-red-contrib-azure-iot-device\
+       @turf/turf
 
 ###
 # Runtime image
@@ -43,6 +44,7 @@ COPY ./app ./
 WORKDIR /usr/local/lib
 
 RUN npm install /usr/src/app/custom_nodes/node-red-contrib-azure-iot-device
+RUN npm install /usr/src/app/custom_nodes/node-red-contrib-turfjs-new
 
 WORKDIR /usr/src/app
 
