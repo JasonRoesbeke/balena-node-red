@@ -1,6 +1,6 @@
 module.exports = function(RED) {
     function TurfJSNode(config) {
-        const turf = require('turf');
+        const turf = require('@turf/turf');
         RED.nodes.createNode(this,config);
         var node = this;
         this.on('input', function(msg) {
